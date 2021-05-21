@@ -54,18 +54,9 @@ public class VizitkaController {
     @PostMapping("/nova")
     public Object pridat(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "vizitka";
+            return "formular";
         }
-        vizitka.setId(vizitka.getId());
-        repository.save(vizitka);
-        return "redirect:/";
-    }
-
-    @PostMapping("/{id:[0-9]+}")
-    public Object ulozit(@PathVariable Integer id, @ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "vizitka";
-        }
+        vizitka.setId(null);
         repository.save(vizitka);
         return "redirect:/";
     }

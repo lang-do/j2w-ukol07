@@ -11,10 +11,10 @@
 </head>
 <body>
 <div class="detail">
-    <form class="vizitka">
+    <form class="vizitka" method="post">
         <div class="row">
-            <label for="jmeno">Jméno</label>
-            <input type="text" id="jmeno" th:field="${vizitka.jmeno}" maxlength="100" required />
+            <label for="celeJmeno">Jméno</label>
+            <input type="text" id="celeJmeno" th:field="${vizitka.celeJmeno}" maxlength="100" required />
         </div>
         <div class="row">
             <label for="firma">Firma</label>
